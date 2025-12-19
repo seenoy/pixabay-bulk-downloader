@@ -13,3 +13,14 @@ A lightweight Python script to download bulk images from [Pixabay](https://pixab
 - 📁 **Organized Output** - Images saved with structured naming
 
 ---
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have:
+
+- **Python 3.7 or higher** installed on your system
+- A **Pixabay account** (free or premium)
+- A **Pixabay API Key** from [Pixabay API Dashboard](https://pixabay.com/api/docs/)
+- **pip** (Python package manager)
+
+---
