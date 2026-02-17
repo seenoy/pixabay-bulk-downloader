@@ -2,10 +2,12 @@ import requests
 import os
 from pathlib import Path
 
-api_key = os.getenv("api_key")                            #enter your api key from pixabay api-Documentation page.
-search_query = "WHAT_YOU_WANT_TO_SEARCH"                  #enter the search query to get results. 
-per_page = 50                                             #enter the number of photos you want to download.
+api_key = os.getenv("api_key")
+search_query = os.getenv("search_query")
+per_page = os.getenv("per_page" , "50")
 image_dir = "pixabay_images"                              #this is the directory where your photos is downloaded.
+image_type = os.getenv("image_type", "photo")
+order = os.getenv("order", "popular")
 
 Path(image_dir).mkdir(exist_ok=True)
 
@@ -14,8 +16,8 @@ params = {
     "key": api_key,
     "q": search_query,
     "per_page": per_page,
-    "image_type": os.getenv("image_type", "photo"),      #enter the image type you want (Accepted values: "all", "photo", "illustration", "vector").
-    "order": "popular",                                  #enter the value to filter the results according to you want (Accepted values: "popular", "latest", "trending").
+    "image_type": image_type,
+    "order": order,
     "min_width": 1920,
     "min_height": 1080
 }
